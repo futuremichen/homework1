@@ -16,7 +16,7 @@ def index():
 def getAI():
     q = request.form.get("q")
     r = palm.chat(messages=q, **model)
-    return(render_template("genAI.html",r=r))
+    return(render_template("genAI.html",r=r.last))
 
 @app.route("/DApp", methods=["GET","POST"])
 def DApp():
